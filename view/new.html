@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  新規作成
+  <form action="/timecard/new" method="post">
+
+    Day: <input type="date" name="Day"><br>
+    Start: <input type="time" name="Start" step="900"><br>
+    End: <input type="time" name="End" step="900"><br>
+    BreakTime: <input type="time" name="BreakTime" step="900"><br>
+    <input type="submit" value="送信">
+  </form>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <p>ユーザー名：{{.sessioninfo.UserName}}
+    <a href="/logout">
+      <button type="button">ログアウト</button>
+    </a>
+  </p>
+  <p>表示月：{{.month}}<br>
+  <form action="/timecard/select" method="post">
+    表示月変更: <input type="month" name="Month" value={{.month}}>
+    <input type="submit" value="変更">
+  </form>
+  </p>
+
+  {{if .listLen}}
+  <a href="/timecard/init">
+    <p>{{.listLen}}</p>
+    <button type="button">初期化</button>
+  </a>
+  {{end}}
+  <table border="1">
+    <tr>
+      <th>id</th>
+      <th>日付</th>
+      <th>開始時</th>
+      <th>終了時</th>
+      <th>休憩時間</th>
+      <th>編集・削除</th>
+    </tr>
+    {{/* 構造体は、ドットにメンバ名でアクセス */}}
+    {{range .timecards}}
+    <tr>
+      <td>{{.ID}}</td>
+      <td>{{.Day}}</td>
+      <td>{{.Start}}</td>
+      <td>{{.End}}</td>
+      <td>{{.BreakTime}}</td>
+      <td>
+        <a href="/timecard/edit/{{.ID}}">
+          <button type="button">編集</button>
+        </a>
+        <a href="/timecard/delete/{{.ID}}">
+          <button type="button">削除</button>
+        </a>
+      </td>
+    </tr>
+    {{end}}
+  </table>
+</body>
+</html>

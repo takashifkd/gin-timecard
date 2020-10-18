@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>ユーザー登録画面だよ</h1>
+
+  <form action="/signup" method="POST">
+    <p>ユーザー名</p>
+    <p><input type="text" name="username" value="{{.username}}"></p>
+    <p>パスワード</p>
+    <p><input type="text" name="password" value="{{.password}}"></p>
+    <p><input type="submit" value="登録"></p>
+  </form>
+
+
+  <h2>トップ画面へ</h2>
+  <a href="/">
+    <button type="button">トップ画面へ</button>
+  </a>
+</body>
+</html>

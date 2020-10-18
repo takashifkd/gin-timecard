@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+</head>
+<body>
+  編集画面<br>
+  ID:{{.timecard.ID}}<br>
+  Day:{{.timecard.Day}}<br>
+  <form action="/timecard/edit/{{.timecard.ID}}" method="post">
+
+    Start: <input type="time" name="Start" step="900" value={{.timecard.Start}}><br>
+    End: <input type="time" name="End" step="900" value={{.timecard.End}}><br>
+    BreakTime: <input type="time" name="BreakTime" step="900" value={{.timecard.BreakTime}}><br>
+    <input type="submit" value="送信">
+  </form>
+  <a href="/timecard/index">
+    <button type="button">戻る</button>
+  </a>
+</body>
+</html>
