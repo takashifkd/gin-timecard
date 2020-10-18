@@ -14,7 +14,8 @@ var (
 
 // Init is initialize db from main function
 func Init() {
-	db, err = gorm.Open("postgres", "host=db port=5432 user=gin-test dbname=gin-test password=gin-test sslmode=disable")
+	// db, err = gorm.Open("postgres", "host=db port=5432 user=gin-test dbname=gin-test password=gin-test sslmode=disable")//ローカル
+	db, err = gorm.Open("postgres", "host=ec2-18-213-176-229.compute-1.amazonaws.com port=5432 user=qgwmxbbrwbumhl dbname=d6341p2hhcno6h password=3c938c17cb93c27eae22c9e151062231057c5bf04ff53e7ff04ca87046ca61f9 sslmode=require") //本番
 	if err != nil {
 		panic("データベースが開けません（Init）")
 	}
