@@ -8,7 +8,7 @@ import (
 	"gin-test/models"
 	"log"
 	"net/http"
-	"os"
+	// "os"
 	"os/user"
 	"time"
 
@@ -308,8 +308,8 @@ func Init() {
 		})
 	})
 
-	// r.Run()
-	r.Run(":" + os.Getenv("PORT"))
+	r.Run()
+	// r.Run(":" + os.Getenv("PORT"))
 }
 
 //--------------------------------------------
