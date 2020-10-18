@@ -9,7 +9,7 @@ WORKDIR $GOPATH/gin-test
 
 #COPY . .
 
-#ADD . $GOPATH/gin-test
+ADD . $GOPATH/gin-test
 RUN go get -u github.com/gin-gonic/gin && \
   go get github.com/jinzhu/gorm && \
   go get github.com/jinzhu/gorm/dialects/postgres
